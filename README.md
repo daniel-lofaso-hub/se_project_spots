@@ -4,11 +4,11 @@
 
 - Intro
 - Figma
-- Images
+- Github
 
 **Intro**
 
-In this project, I created a webpage that has functionality on desktop, tablet, and mobile browsers. We utilized HTML and CSS with Responsive Design.
+In this project, I created a webpage that has functionality on desktop, tablet, and mobile browsers. I utilized HTML and CSS with Responsive Design.
 
 **Figma**
 
@@ -16,6 +16,9 @@ In this project, I created a webpage that has functionality on desktop, tablet, 
 
 **Images**
 
-The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster.
+- [Example website on Desktop at 1440px](./images/Spots1440.png)
+- [Example website on mobile](./images/SpotsMobile.png)
 
-Good luck and have fun!
+**Github**
+
+- [Link to the project on Github](https://github.com/daniel-lofaso-hub/se_project_spots)
