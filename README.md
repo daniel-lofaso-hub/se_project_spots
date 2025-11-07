@@ -4,11 +4,13 @@
 
 - Intro
 - Figma
+- Images
 - Github
+- Project Pitch Video
 
 **Intro**
 
-In this project, I created a webpage that has functionality on desktop, tablet, and mobile browsers. I utilized HTML and CSS with Responsive Design.
+In this project, I created a webpage that has functionality on desktop, tablet, and mobile browsers. I utilized HTML and CSS with Responsive Design, using tools like CSS Grid and media queries.
 
 **Figma**
 
@@ -22,3 +24,7 @@ In this project, I created a webpage that has functionality on desktop, tablet, 
 **Github**
 
 - [Link to the project on Github](https://github.com/daniel-lofaso-hub/se_project_spots)
+
+**Project Pitch**
+
+- [Link to the video on Looom](https://www.loom.com/share/6a6270ab7df940babc0ea6ff716af5a1)
