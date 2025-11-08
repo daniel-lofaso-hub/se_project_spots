@@ -27,4 +27,4 @@ In this project, I created a webpage that has functionality on desktop, tablet, 
 
 **Project Pitch**
 
-- [Link to the video on Looom](https://www.loom.com/share/6a6270ab7df940babc0ea6ff716af5a1)
+- [Link to the video on Loom](https://www.loom.com/share/6a6270ab7df940babc0ea6ff716af5a1)
