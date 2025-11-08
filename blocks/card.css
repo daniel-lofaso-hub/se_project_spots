@@ -7,7 +7,8 @@
   width: 413px;
   object-fit: cover;
   display: block;
-  border-radius: 10px;
+  border-radius: 8px;
+  margin-bottom: 12px;
 }
 
 .card__content {
@@ -18,8 +19,8 @@
 .card__title {
   font-size: 20px;
   font-weight: 500;
-  line-height: 120%;
-  margin: 12px 0 36px;
+  line-height: 100%;
+  margin: 0;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -32,8 +33,11 @@
   width: 23px;
   border: none;
   background-color: transparent;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
   opacity: 40%;
-  margin: 12px 0 40px;
+  margin: 0;
   cursor: pointer;
 }
 
@@ -54,10 +58,5 @@
   .card__title {
     font-size: 16px;
     max-width: 265px;
-    margin: 12px 0 22px;
-  }
-
-  .card__like-button {
-    margin: 12px 0 20px;
   }
 }

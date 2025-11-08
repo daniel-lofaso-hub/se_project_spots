@@ -23,7 +23,7 @@ In this project, I created a webpage that has functionality on desktop, tablet, 
 
 **Github**
 
-- [Link to the project on Github](https://github.com/daniel-lofaso-hub/se_project_spots)
+- [Link to the project on Github](https://daniel-lofaso-hub.github.io/se_project_spots/)
 
 **Project Pitch**
 

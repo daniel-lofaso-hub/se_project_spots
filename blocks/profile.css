@@ -8,13 +8,13 @@
   height: 190px;
   width: 190px;
   margin-right: 20px;
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
 .profile__column {
   display: flex;
   flex-direction: column;
-  width: 420px;
+  max-width: 420px;
 }
 
 .profile__name {
@@ -58,15 +58,13 @@
   width: fit-content;
   padding: 0;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .profile__edit-button:hover {
   opacity: 100%;
-}
-
-.profile__edit-post {
-  margin-right: 8px;
-  transform: translate(0, 2px);
 }
 
 .profile__post-button {
@@ -119,11 +117,6 @@
     margin: 12px 0 6px;
     font-size: 20px;
     line-height: 100%;
-    display: -webkit-box;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
     -webkit-box-pack: center;
     -webkit-box-align: center;
     text-align: center;
@@ -131,11 +124,6 @@
   }
 
   .profile__description {
-    display: -webkit-box;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
     -webkit-box-pack: center;
     -webkit-box-align: center;
     text-align: center;
