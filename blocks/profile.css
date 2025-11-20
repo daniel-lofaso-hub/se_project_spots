@@ -21,7 +21,6 @@
   margin: 0 0 12px;
   font-size: 32px;
   font-weight: 500;
-  line-height: 100%;
   color: #212121;
   display: -webkit-box;
   overflow: hidden;
@@ -36,8 +35,7 @@
   font-size: 16px;
   font-weight: 500;
   line-height: 100%;
-  color: #212121;
-  opacity: 70%;
+  color: rgba(33, 33, 33, 0.7);
   display: -webkit-box;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -51,8 +49,7 @@
   font-size: 16px;
   font-weight: 500;
   line-height: 100%;
-  color: #212121;
-  opacity: 70%;
+  color: rgba(33, 33, 33, 0.7);
   background-color: transparent;
   border: none;
   width: fit-content;

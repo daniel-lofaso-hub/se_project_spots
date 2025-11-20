@@ -5,6 +5,5 @@
   padding: 60px;
   text-align: center;
   background-color: #fcf5e5;
-  opacity: 70%;
-  color: #212121;
+  color: rgba(33, 33, 33, 0.7);
 }
