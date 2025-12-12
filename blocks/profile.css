@@ -61,7 +61,7 @@
 }
 
 .profile__edit-button:hover {
-  opacity: 100%;
+  opacity: 1;
 }
 
 .profile__post-button {
@@ -81,7 +81,7 @@
 }
 
 .profile__post-button:hover {
-  opacity: 80%;
+  opacity: 0.8;
 }
 
 .profile__new-post {
