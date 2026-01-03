@@ -65,7 +65,7 @@
         <div class="modal__container">
           <button class="modal__close-btn" type="button"></button>
           <h2 class="modal__title">Edit profile</h2>
-          <form class="modal__form">
+          <form class="modal__form" novalidate>
             <label for="profile-name-input" class="modal__label"
               >Name
               <input
@@ -95,7 +95,12 @@
                 class="modal__error"
               ></span>
             </label>
-            <button class="modal__submit-btn" type="submit">Save</button>
+            <button
+              class="modal__submit-btn modal__submit-btn_disabled"
+              type="submit"
+            >
+              Save
+            </button>
           </form>
         </div>
       </div>
@@ -103,7 +108,7 @@
         <div class="modal__container">
           <button class="modal__close-btn" type="button"></button>
           <h2 class="modal__title">New post</h2>
-          <form class="modal__form">
+          <form class="modal__form" novalidate>
             <label for="card-image-input" class="modal__label"
               >Image link
               <input
@@ -128,7 +133,12 @@
               />
               <span id="card-caption-input-error" class="modal__error"></span>
             </label>
-            <button class="modal__submit-btn" type="submit">Save</button>
+            <button
+              class="modal__submit-btn modal__submit-btn_disabled"
+              type="submit"
+            >
+              Save
+            </button>
           </form>
         </div>
       </div>
