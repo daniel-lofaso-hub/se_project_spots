@@ -1,9 +1,10 @@
-import {
+const css = require("./index.css");
+const {
   enableValidation,
   settings,
   resetValidation,
   disableButton,
-} from "./validation.js";
+} = require("../scripts/validation.js");
 
 const initialCards = [
   {
