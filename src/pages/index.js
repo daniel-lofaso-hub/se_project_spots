@@ -6,7 +6,7 @@ const {
   disableButton,
 } = require("../scripts/validation.js");
 const { Api } = require("../utils/Api.js");
-
+const { setButtonText } = require("../utils/helpers.js");
 const initialCards = [
   {
     name: "Golden Gate bridge",
@@ -121,18 +121,25 @@ function getCardElement(data) {
   const cardElement = cardTemplate.cloneNode(true);
   const cardTitleEl = cardElement.querySelector(".card__title");
   const cardImageEl = cardElement.querySelector(".card__image");
+  const cardLikeBtnEl = cardElement.querySelector(".card__like-button");
+  const cardDeleteBtnEl = cardElement.querySelector(".card__delete-button");
 
+  console.log(data);
   cardImageEl.src = data.link;
   cardImageEl.alt = data.name;
   cardTitleEl.textContent = data.name;
 
-  const cardLikeBtnEl = cardElement.querySelector(".card__like-button");
-  cardLikeBtnEl.addEventListener("click", () => {
-    cardLikeBtnEl.classList.toggle("card__like-button_active");
+  if (data.isLiked === true) {
+    cardLikeBtnEl.classList.add("card__like-button_active");
+  } else {
+    cardLikeBtnEl.classList.remove("card__like-button_active");
+  }
+
+  cardLikeBtnEl.addEventListener("click", (evt) => {
+    handleLike(evt, data._id);
   });
 
-  const cardDeleteBtnEl = cardElement.querySelector(".card__delete-button");
-  cardDeleteBtnEl.addEventListener("click", (evt) =>
+  cardDeleteBtnEl.addEventListener("click", () =>
     handleDeleteCard(cardElement, data._id),
   );
 
@@ -153,6 +160,17 @@ function handleEscapeKey(evt) {
   }
 }
 
+function handleLike(evt, id) {
+  evt.preventDefault();
+  const isLiked = evt.target.classList.contains("card__like-button_active");
+  api
+    .handleLike(id, isLiked)
+    .then(() => {
+      evt.target.classList.toggle("card__like-button_active");
+    })
+    .catch(console.error);
+}
+
 function handleDeleteCard(cardElement, cardId) {
   selectedCard = cardElement;
   selectedCardId = cardId;
@@ -161,13 +179,18 @@ function handleDeleteCard(cardElement, cardId) {
 
 function handleDeleteSubmit(evt) {
   evt.preventDefault();
+  const submitBtn = evt.submitter;
+  setButtonText(submitBtn, true, "Delete", "Deleting...");
   api
     .deleteCard(selectedCardId)
     .then(() => {
       selectedCard.remove();
       closeModal(deletePostModal);
     })
-    .catch(console.error);
+    .catch(console.error)
+    .finally(() => {
+      setButtonText(submitBtn, false, "Delete", "Deleting...");
+    });
 }
 
 function openModal(modal) {
@@ -224,6 +247,8 @@ deletePostClose.addEventListener("click", () => {
 
 function handleEditProfileSubmit(evt) {
   evt.preventDefault();
+  const submitBtn = evt.submitter;
+  setButtonText(submitBtn, true);
   api
     .editUserInfo({
       name: editProfileNameInput.value,
@@ -234,13 +259,18 @@ function handleEditProfileSubmit(evt) {
       profileDescriptionEl.textContent = data.about;
       closeModal(editProfileModal);
     })
-    .catch(console.error);
+    .catch(console.error)
+    .finally(() => {
+      setButtonText(submitBtn, false);
+    });
 }
 
 editProfileForm.addEventListener("submit", handleEditProfileSubmit);
 
 function handleAvatarSubmit(evt) {
   evt.preventDefault();
+  const submitBtn = evt.submitter;
+  setButtonText(submitBtn, true);
   api
     .editAvatarInfo({
       avatar: editAvatarInput.value,
@@ -251,13 +281,18 @@ function handleAvatarSubmit(evt) {
       disableButton(editAvatarSubmitBtn, settings);
       closeModal(editAvatarModal);
     })
-    .catch(console.error);
+    .catch(console.error)
+    .finally(() => {
+      setButtonText(submitBtn, false);
+    });
 }
 
 editAvatarForm.addEventListener("submit", handleAvatarSubmit);
 
 function handleNewPostSubmit(evt) {
   evt.preventDefault();
+  const submitBtn = evt.submitter;
+  setButtonText(submitBtn, true);
   api
     .addCard({
       name: newPostCardCaptionInput.value,
@@ -270,7 +305,10 @@ function handleNewPostSubmit(evt) {
       disableButton(newPostSubmitBtn, settings);
       closeModal(newPostModal);
     })
-    .catch(console.error);
+    .catch(console.error)
+    .finally(() => {
+      setButtonText(submitBtn, false);
+    });
 }
 
 newPostForm.addEventListener("submit", handleNewPostSubmit);
